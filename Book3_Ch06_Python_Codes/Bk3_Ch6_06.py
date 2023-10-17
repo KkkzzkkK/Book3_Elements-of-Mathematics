@@ -19,5 +19,5 @@ x1 = cos(t)
 x2 = sin(t)
 x3 = t
 
-plot3d_parametric_line(x1, x2, x3, (t, 0, 8*math.pi))
+plot3d_parametric_line(x1, x2, x3, (x3, 0, 8*math.pi))
 

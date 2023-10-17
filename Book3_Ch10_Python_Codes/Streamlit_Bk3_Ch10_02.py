@@ -14,7 +14,7 @@ import plotly.graph_objects as go
 import streamlit as st
 
 x1,x2 = symbols('x1 x2')
-num = 301; # number of mesh grids
+num = 301
 x1_array = np.linspace(-3,3,num)
 x2_array = np.linspace(-3,3,num)
 xx1,xx2 = np.meshgrid(x1_array,x2_array)
@@ -27,7 +27,7 @@ f_x =  3*(1-x1)**2*exp(-(x1**2) - (x2+1)**2)\
 f_x_fcn = lambdify([x1,x2],f_x)
 f_zz = f_x_fcn(xx1,xx2)
 
-st.latex('f(x_1, x_2) = ' + latex(f_x))
+st.latex(f'f(x_1, x_2) = {latex(f_x)}')
 
 
 #%% visualizations

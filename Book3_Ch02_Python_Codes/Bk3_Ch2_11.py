@@ -17,7 +17,7 @@ import seaborn as sns
 np.random.seed(0)
 # Generate matrix A
 n = 4
-A = np.random.uniform(-1.5,1.5,n*n).reshape(n, n)
+A = np.random.uniform(-1.5, 1.5, n**2).reshape(n, n)
 
 all_max = 1.5
 all_min = -1.5

@@ -31,12 +31,12 @@ def plot_secant(x0, y0, x1, y1):
 #%%
 
 with st.sidebar:
-    
+
     x0 = st.slider('Fixed point: ',
                     min_value = 0.5, 
                     max_value = 1.5,
                     step = 0.1)
-    
+
     delta_x = st.slider('Delta x: ',
                     min_value = 0.01, 
                     max_value = 0.5,
@@ -70,7 +70,7 @@ plot_secant(x0, y0, x1, y1)
 
 plt.xlabel('X')
 plt.ylabel('$y = f(x)$')
-ax.set_title('$f(x) = %s$' % latex(f_x))
+ax.set_title(f'$f(x) = {latex(f_x)}$')
 ax.set_xlim(0, 2)
 ax.set_ylim(-1, 4)
 

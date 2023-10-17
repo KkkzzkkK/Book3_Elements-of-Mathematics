@@ -33,10 +33,10 @@ plt.close('all')
 
 fig, ax = plt.subplots()
 
-ax.plot(x_array_right, f_x_array_right, linewidth = 1.5, color = 'b') 
+ax.plot(x_array_right, f_x_array_right, linewidth = 1.5, color = 'b')
 ax.axhline(y = f_x_0_limit_right, color = 'r')
 
-ax.plot(x_array_left, f_x_array_left, linewidth = 1.5, color = 'b') 
+ax.plot(x_array_left, f_x_array_left, linewidth = 1.5, color = 'b')
 ax.axhline(y = f_x_0_limit_left, color = 'r')
 
 ax.axvline(x = 0,   color = 'k')
@@ -46,4 +46,4 @@ ax.grid(linestyle='--', linewidth=0.25, color=[0.5,0.5,0.5])
 ax.set_xlim(x_array_left.min(),x_array_right.max())
 
 ax.set_xlabel('$\it{x}$',fontname = 'Times New Roman')
-ax.set_ylabel('$%s$' % latex(f_x), fontname = 'Times New Roman')
+ax.set_ylabel(f'${latex(f_x)}$', fontname = 'Times New Roman')

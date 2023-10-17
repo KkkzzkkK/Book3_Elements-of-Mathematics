@@ -9,7 +9,7 @@
 # Bk3_Ch7_03
 
 import matplotlib.pyplot as plt
-import itertools 
+import itertools
 from sklearn.metrics.pairwise import euclidean_distances
 import numpy as np
 import seaborn as sns
@@ -23,12 +23,12 @@ X = np.array([[1,6], [4,6], [1,5], [6,0],
 # define labels
 labels = ['a','b','c','d','e','f','g','h','i','j','k','l']
 
-colors = plt.cm.rainbow(np.linspace(0,1,int(len(X)*len(X)/2)))
+colors = plt.cm.rainbow(np.linspace(0, 1, int(len(X)**2 / 2)))
 
 fig, ax = plt.subplots()
 
 for i, d in enumerate(itertools.combinations(X, 2)):
-    
+
     plt.plot([d[0][0],d[1][0]],[d[0][1],d[1][1]], color = colors[i,:])
 
 # plot scatter of sample data
@@ -38,7 +38,7 @@ plt.scatter(x=X[:, 0], y=X[:, 1], color=np.array([0, 68, 138])/255., alpha=1.0,
 for i, (x,y) in enumerate(zip(X[:, 0],X[:, 1])):
 
     # add labels to the sample data
-    label = labels[i] + f"({x},{y})"
+    label = f"{labels[i]}({x},{y})"
 
     plt.annotate(label, # text
                  (x,y), # point to label

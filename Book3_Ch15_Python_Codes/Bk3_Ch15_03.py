@@ -47,17 +47,17 @@ plt.plot(x0, y0, color = '#92D050', marker = 'x', markersize = 12)
 colors = plt.cm.RdYlBu_r(np.linspace(0,1,len(delta_Xs)))
 
 for i in np.linspace(1,len(delta_Xs),len(delta_Xs)):
-    
+
     x1 = x0 + delta_Xs[int(i)-1]
     y1 = f_x_fcn(x1)
     plt.plot(x1, y1, color = '#00448A', 
              marker = 'x', markersize = 12)
-    
+
     plot_secant(x0, y0, x1, y1, colors[int(i)-1])
 
 plt.xlabel('X')
 plt.ylabel('$y = f(x)$')
-ax.set_title('$f(x) = %s$' % latex(f_x))
+ax.set_title(f'$f(x) = {latex(f_x)}$')
 ax.set_xlim(0, 2)
 ax.set_ylim(-1, 4)
 
@@ -68,12 +68,12 @@ plt.plot(x0, y0, color = '#92D050', marker = 'x', markersize = 12)
 colors = plt.cm.RdYlBu_r(np.linspace(0,1,len(delta_Xs)))
 
 for i in np.linspace(1,len(delta_Xs),len(delta_Xs)):
-    
+
     x1 = x0 + delta_Xs[int(i)-1]
     y1 = f_x_fcn(x1)
-    
+
     k = (y1 - y0)/(x1 - x0)
-    
+
     plt.plot(delta_Xs[int(i)-1], k, color = colors[int(i)-1],
              marker = 'x', markersize = 12)
 

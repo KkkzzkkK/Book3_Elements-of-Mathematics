@@ -48,21 +48,21 @@ with st.sidebar:
               min_value = 0.0, 
               max_value = 1.0,
               step = 0.05)
-    
+
     num_steps = st.slider('Number of nights: ', 
                     min_value = 10,
                     max_value = 20,
                     step = 1)
-    
+
     pi_0 = np.array([[p],
                      [1-p]])
-    
-    st.latex('T = ' + bmatrix(T))
+
+    st.latex(f'T = {bmatrix(T)}')
     st.latex('\pi (0) = ' + bmatrix(pi_0))
-    
+
     st.latex('\pi(k + 1) = T \pi(k)')
-    
-    
+
+
 all_max = 1
 all_min = 0
 
@@ -84,18 +84,18 @@ plt.plot(x1,1-x1,color = 'k',
 # plot a unit circle as reference
 plt.contour(xx1, xx2, zz, levels = [1], 
             colors='k', linestyles = ['--'])
-    
+
 for i in np.arange(0,num_steps + 1):
-    
+
     # plot normalized vector
     draw_vector(pi/np.linalg.norm(pi), colors[i], ax)
-    
+
     # plot original vector
     draw_vector(pi, colors[i], ax)
     pi = T@pi
     # update pi
-    
-    
+
+
 ax.tick_params(left=False, bottom=False)
 ax.set_xlim(-1.1, 1.1)
 ax.set_ylim(-1.1, 1.1)

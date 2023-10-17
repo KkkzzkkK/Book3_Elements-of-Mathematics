@@ -24,11 +24,10 @@ B_i = B_6
 A_i = A_6
 n_i = n_start
 
-for i in n_array:
-    
+for _ in n_array:
     B_array.append(B_i)
     A_array.append(A_i)
-    
+
     # updating
     A_i = 2*A_i*B_i/(A_i + B_i)
     B_i = np.sqrt(A_i*B_i)

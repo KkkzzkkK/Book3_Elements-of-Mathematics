@@ -42,12 +42,12 @@ fig, ax = plt.subplots(3,1)
 
 # original function
 
-ax[0].plot(x_array, f_x_array, linewidth = 1.5) 
+ax[0].plot(x_array, f_x_array, linewidth = 1.5)
 ax[0].hlines(y=0, xmin = x_array.min(), xmax = x_array.max(), 
              color='r', linestyle='--')
 ax[0].vlines(x=0, ymin = f_x_array.min(), ymax = f_x_array.max(), 
              color='r', linestyle='--')
-ax[0].set_title('$f(x) = %s$' % latex(f_x))
+ax[0].set_title(f'$f(x) = {latex(f_x)}$')
 ax[0].set_ylabel('$f(x)$')
 ax[0].set_xlim((x_array.min(),x_array.max()))
 ax[0].spines['right'].set_visible(False)
@@ -57,7 +57,7 @@ ax[0].grid(linestyle='--', linewidth=0.25, color=[0.5,0.5,0.5])
 
 # first-order derivative
 
-ax[1].plot(x_array, f_x_1_diff_array, linewidth = 1.5) 
+ax[1].plot(x_array, f_x_1_diff_array, linewidth = 1.5)
 ax[1].hlines(y=0, xmin = x_array.min(), xmax = x_array.max(), 
              color='r', linestyle='--')
 ax[1].vlines(x=0, 
@@ -75,7 +75,7 @@ ax[1].spines['top'].set_visible(False)
 
 # second-order derivative
 
-ax[2].plot(x_array, f_x_2_diff_array, linewidth = 1.5) 
+ax[2].plot(x_array, f_x_2_diff_array, linewidth = 1.5)
 ax[2].hlines(y=0, xmin = x_array.min(), xmax = x_array.max(), 
              color='r', linestyle='--')
 ax[2].vlines(x=0, 

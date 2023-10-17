@@ -69,27 +69,27 @@ options = ('AP - BP = 0',
 with st.sidebar:
     option_i = st.selectbox('Choose a relation:',
                  options)
-    
+
     A_x = st.slider('x coordinate of A:', 
                     min_value = 2.0,
                     max_value = 4.0,
                     step = 0.1)
-    
+
     A_y = st.slider('y coordinate of A:', 
                     min_value = 2.0,
                     max_value = 4.0,
                     step = 0.1)
-    
+
     B_x = st.slider('x coordinate of B:', 
                     min_value = 0.0,
                     max_value = 2.0,
                     step = 0.1)
-    
+
     B_y = st.slider('y coordinate of B:', 
                     min_value = -2.0,
                     max_value = -4.0,
                     step = 0.1)
-    
+
 #%%
 
 A = [A_x, A_y]
@@ -97,10 +97,10 @@ B = [B_x, B_y]
 # A = [4, 2]
 # B = [0, -2]
 
-st.latex('A = ' + str(A))
-st.latex('B = ' + str(B))
+st.latex(f'A = {A}')
+st.latex(f'B = {B}')
 
-num = 301; 
+num = 301;
 # number of mesh grids
 x_array = np.linspace(-8,8,num)
 y_array = np.linspace(-8,8,num)
@@ -123,7 +123,7 @@ if option_i == 'AP - BP = 0':
     st.latex('AP - BP = 0')
     distance = dist_AX_zz - dist_BX_zz
     fig = plot_fcn(A,B,dist_AX_zz,dist_BX_zz,distance)
-    
+
     st.pyplot(fig)
 
 elif option_i == 'AP - BP - 3 = 0':
@@ -131,7 +131,7 @@ elif option_i == 'AP - BP - 3 = 0':
     st.latex('AP - BP - 3 = 0')
     distance = dist_AX_zz - dist_BX_zz - 3
     fig = plot_fcn(A,B,dist_AX_zz,dist_BX_zz,distance)
-    
+
     st.pyplot(fig)
 
 elif option_i == 'AP - BP + 3 = 0':
@@ -139,7 +139,7 @@ elif option_i == 'AP - BP + 3 = 0':
     st.latex('AP - BP + 3 = 0')
     distance = dist_AX_zz - dist_BX_zz + 3
     fig = plot_fcn(A,B,dist_AX_zz,dist_BX_zz,distance)
-    
+
     st.pyplot(fig)
 
 elif option_i == 'AP - 2*BP = 0':
@@ -147,7 +147,7 @@ elif option_i == 'AP - 2*BP = 0':
     st.latex('AP - 2*BP = 0')
     distance = dist_AX_zz - 2*dist_BX_zz
     fig = plot_fcn(A,B,dist_AX_zz,dist_BX_zz,distance)
-    
+
     st.pyplot(fig)
 
 elif option_i == 'BP + AP - 8 = 0':
@@ -155,5 +155,5 @@ elif option_i == 'BP + AP - 8 = 0':
     st.latex('BP + AP - 8 = 0')
     distance = dist_BX_zz + dist_AX_zz - 8
     fig = plot_fcn(A,B,dist_AX_zz,dist_BX_zz,distance)
-    
+
     st.pyplot(fig)

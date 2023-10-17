@@ -29,27 +29,27 @@ def bmatrix(a):
 
 #%%
 with st.sidebar:
-    
+
     st.latex(r'C_{m\times n} = A_{m\times p} B_{p\times n}')
-    
+
     rows_A = st.slider('Number of rows in A:',
                     min_value = 1,
                     max_value = 9,
                     value = 5,
                     step = 1)
-    
+
     cols_A = st.slider('Number of columns in A:',
                     min_value = 1,
                     max_value = 9,
                     value = 5,
                     step = 1)
-    
+
     rows_B = st.slider('Number of rows in B:',
                     min_value = 1,
                     max_value = 9,
                     value = 5,
                     step = 1)
-    
+
     cols_B = st.slider('Number of columns in B:',
                     min_value = 1,
                     max_value = 9,
@@ -69,50 +69,50 @@ st.latex(r'B_{p\times n} = ' + bmatrix(B))
 try:
     
     C = A@B
-    st.latex('C = AB = ' + bmatrix(C))
-    
-    
+    st.latex(f'C = AB = {bmatrix(C)}')
+        
+
     fig, axs = plt.subplots(1, 5, figsize=(12, 3))
-    
+
     plt.sca(axs[0])
     ax = sns.heatmap(A,cmap='RdYlBu_r',
                      cbar_kws={"orientation": "horizontal"},
                      yticklabels=np.arange(1,rows_A+1), 
                      xticklabels=np.arange(1,cols_A+1))
-    
+
     ax.set_aspect("equal")
     plt.title('$A$')
     plt.yticks(rotation=0) 
-    
+
     plt.sca(axs[1])
     plt.title('$@$')
     plt.axis('off')
-    
+
     plt.sca(axs[2])
     ax = sns.heatmap(B,cmap='RdYlBu_r',
                      cbar_kws={"orientation": "horizontal"},
                      yticklabels=np.arange(1,rows_B+1), 
                      xticklabels=np.arange(1,cols_B+1))
-    
+
     ax.set_aspect("equal")
     plt.title('$B$')
     plt.yticks(rotation=0) 
-    
+
     plt.sca(axs[3])
     plt.title('$=$')
     plt.axis('off')
-    
+
     plt.sca(axs[4])
     ax = sns.heatmap(C,cmap='RdYlBu_r',
                      cbar_kws={"orientation": "horizontal"},
                      yticklabels=np.arange(1,rows_A+1), 
                      xticklabels=np.arange(1,cols_B+1))
-    
+
     ax.set_aspect("equal")
     plt.title('$C$')
     plt.yticks(rotation=0) 
-    
+
     st.pyplot(fig)
-    
+
 except:
     st.write('The number of columns of the first matrix, must equal the number of rows of the second matrix.')

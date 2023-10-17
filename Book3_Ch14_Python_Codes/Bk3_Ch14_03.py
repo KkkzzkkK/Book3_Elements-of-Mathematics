@@ -9,10 +9,7 @@
 # Bk3_Ch14_03
 
 def fib(n):
-   if n <= 1:
-       return (n)
-   else:
-       return (fib(n-1) + fib(n-2))
+   return n if n <= 1 else (fib(n-1) + fib(n-2))
 
 # Display n-term from Fibonacci sequence
 n = 10  # number of terms

@@ -17,10 +17,10 @@ def draw_vector(vector,RBG,label):
     array = np.array([[0, 0, vector[0], vector[1]]])
     X, Y, U, V = zip(*array)
     plt.quiver(X, Y, U, V,angles='xy', scale_units='xy',scale=1,color = RBG)
-    
+
     # add labels to the sample data
-    
-    label = label + f" ({vector[0]},{vector[1]})"
+
+    label = f"{label} ({vector[0]},{vector[1]})"
 
     plt.annotate(label, # text
                  (vector[0],vector[1]), # point to label
