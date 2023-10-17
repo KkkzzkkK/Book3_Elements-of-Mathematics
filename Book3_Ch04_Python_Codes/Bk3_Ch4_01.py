@@ -9,13 +9,13 @@
 # Bk3_Ch4_01
 
 # set A: odd
-A = set([1,3,5])
+A = {1, 3, 5}
 
 # set B: even
-B = set([2,4,6])
+B = {2, 4, 6}
 
 # set C: less than 4
-C = set([1,2,3])
+C = {1, 2, 3}
 
 # A union B
 A_union_B = A.union(B) #A|B, A or B

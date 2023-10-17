@@ -35,13 +35,13 @@ for p, q, ax in zip(pp, qq, axes.flat):
         zz = np.maximum(np.abs(xx1/a),np.abs(xx2/b))
     else:
         zz = ((np.abs((xx1/a))**p) + (np.abs((xx2/b))**q))**(1./q)
-    
+
     # plot contour of Lp
     ax.contourf(xx1, xx2, zz, 20, cmap='RdYlBu_r')
-    
+
     # plot contour of Lp = 1
     ax.contour (xx1, xx2, zz, [1], colors='k', linewidths = 2) 
-    
+
     # decorations
 
     ax.axhline(y=0, color='k', linewidth = 0.25)
@@ -54,7 +54,7 @@ for p, q, ax in zip(pp, qq, axes.flat):
     ax.spines['left'].set_visible(False)
     ax.set_xlabel('$x_1$')
     ax.set_ylabel('$x_2$')
-    ax.set_title('p = ' + str(p) + 'q = ' + str(q))
+    ax.set_title(f'p = {str(p)}q = {str(q)}')
     ax.set_aspect('equal', adjustable='box')
 
 plt.show()

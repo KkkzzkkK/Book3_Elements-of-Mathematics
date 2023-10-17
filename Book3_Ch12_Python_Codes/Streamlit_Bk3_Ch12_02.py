@@ -17,35 +17,35 @@ from sympy import exp, lambdify, latex
 #%%
 
 with st.sidebar:
-    
+
     st.latex(r'f(x) = a \exp(- (b(x - c))^2) + d')
-    
+
     a = st.slider('a',
                   min_value = -2.0,
                   max_value = 2.0,
                   step = 0.1)
-    
+
     b = st.slider('b',
                   min_value = -2.0,
                   max_value = 2.0,
                   step = 0.1)
-    
+
     c = st.slider('c',
                   min_value = -2.0,
                   max_value = 2.0,
                   step = 0.1)
-    
+
     d = st.slider('d',
                   min_value = -2.0,
                   max_value = 2.0,
                   step = 0.1)
-    
+
 #%%
 
 x_array = np.arange(-4,4+0.01, step = 0.01)
 f_x = a*exp(-(b*(x-c))**2) + d
 
-st.latex('f(x) = ' + latex(f_x))
+st.latex(f'f(x) = {latex(f_x)}')
 
 f_x_fcn = lambdify([x],f_x)
 

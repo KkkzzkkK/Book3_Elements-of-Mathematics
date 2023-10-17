@@ -133,12 +133,9 @@ plt.show()
 def plot_square(x,y1,y2):
     
     if y2 > y1:
-        temp = y2;
-        y2 = y1;
-        y1 = temp;
-
+        y2, y1 = y1, y2
     d = y1 - y2;
-    
+
     plt.fill(np.vstack((x, x + d, x + d, x)), 
              np.vstack((y2, y2, y1, y1)),
              facecolor='b', edgecolor='none',

@@ -19,16 +19,16 @@ st.header('Chapter 9, Dive into Conic Sections | Book 3')
 with st.sidebar:
     
     m = st.slider('Define m: ', 1.0, 2.0, value = 1.5, step = 0.1)
-    st.write('m is ' + str(m))
-    
+    st.write(f'm is {str(m)}')
+
     n = st.slider('Define n: ', 1.0, 2.0, value = 1.5, step = 0.1)
-    st.write('n is ' + str(n))
+    st.write(f'n is {str(n)}')
 
     rho = st.slider('Define rho: ', -1.0, 1.0, value = 0.0, step = 0.05)
-    st.write('rho is ' + str(rho))
-    
+    st.write(f'rho is {str(rho)}')
+
 #%% main
-    
+
 x = np.linspace(-4,4,num = 201)
 y = np.linspace(-4,4,num = 201)
 # m = 1
@@ -52,9 +52,9 @@ ax.add_patch(rect)
 # colors = plt.cm.RdYlBu(np.linspace(0,1,len(rho_array)))
 
 # for i in range(0,len(rho_array)):
-    
+
 #     rho = rho_array[i]
-    
+
 ellipse = ((xx/m)**2 - 2*rho*(xx/m)*(yy/n) + (yy/n)**2)/(1 - rho**2);
 
 # color_code = colors[i,:].tolist()

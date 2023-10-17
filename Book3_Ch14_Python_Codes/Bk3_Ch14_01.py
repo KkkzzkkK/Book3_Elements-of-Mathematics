@@ -14,8 +14,7 @@ from matplotlib import pyplot as plt
 # Calculate sum of arithmetic progression sequence
 
 def sum_AP(a, n, d):
-    sum_ = (n * (a + a + (n - 1) * d)) / 2
-    return sum_
+    return (n * (a + a + (n - 1) * d)) / 2
 
 a = 1    # initial term
 n = 100  # number of terms

@@ -49,7 +49,7 @@ labels = ['A', 'H']
 plt.plot(x_points, y_points, 'x')
 
 for label, i, j in zip(labels, x_points, y_points):
-   plt.text(i, j+0.5, label + ' ({}, {})'.format(i, j))
+    plt.text(i, j+0.5, f'{label} ({i}, {j})')
 
 plt.xlabel('x')
 plt.ylabel('y')

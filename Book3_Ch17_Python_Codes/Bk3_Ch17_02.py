@@ -11,7 +11,7 @@
 from sympy import latex, lambdify, diff, sin, log, exp, series
 from sympy.abc import x
 import numpy as np
-from matplotlib import pyplot as plt 
+from matplotlib import pyplot as plt
 from matplotlib import cm
 
 f_x = exp(x)
@@ -36,8 +36,8 @@ plt.close('all')
 
 fig, ax = plt.subplots()
 
-ax.plot(x_array, f_x_array, 'k', linewidth = 1.5) 
-ax.plot(x_0, y_0, 'xr', markersize = 12) 
+ax.plot(x_array, f_x_array, 'k', linewidth = 1.5)
+ax.plot(x_0, y_0, 'xr', markersize = 12)
 ax.set_xlabel("$\it{x}$")
 ax.set_ylabel("$\it{f}(\it{x})$")
 
@@ -46,21 +46,17 @@ order_array = np.arange(0,highest_order + 1)
 
 colors = plt.cm.rainbow(np.linspace(0,1,len(order_array)))
 
-i = 0
-
-for order in order_array:
+for i, order in enumerate(order_array):
 
     f_series = f_x.series(x,x_0,order + 1).removeO()
     # order + 1 = number of terms
-    
+
     f_series_fcn = lambdify(x,f_series)
     f_series_array = f_series_fcn(x_array)
 
     ax.plot(x_array, x_array*0 + f_series_array, linewidth = 0.5,
             color = colors[i,:],
             label = 'Order = %0.0f'%order) 
-
-    i += 1
 
 ax.grid(linestyle='--', linewidth=0.25, color=[0.5,0.5,0.5])
 ax.set_xlim(x_array.min(),x_array.max())
@@ -76,8 +72,8 @@ plt.legend()
 fig = plt.figure(figsize=plt.figaspect(0.5))
 ax = fig.add_subplot(1, 2, 1)
 
-ax.plot(x_array, f_x_array, 'k', linewidth = 1.5) 
-ax.plot(x_0, y_0, 'xr', markersize = 12) 
+ax.plot(x_array, f_x_array, 'k', linewidth = 1.5)
+ax.plot(x_0, y_0, 'xr', markersize = 12)
 ax.set_xlabel("$\it{x}$")
 ax.set_ylabel("$\it{f}(\it{x})$")
 
@@ -111,7 +107,7 @@ ax.spines['top'].set_visible(False)
 ax = fig.add_subplot(1, 2, 2)
 
 error = f_x_array - f_series_array
-ax.plot(x_array, error, 'r', linewidth = 1.5) 
+ax.plot(x_array, error, 'r', linewidth = 1.5)
 ax.fill_between(x_array, 
                 error, 
                 color = '#DEEAF6')

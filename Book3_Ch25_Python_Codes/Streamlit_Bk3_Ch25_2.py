@@ -36,29 +36,28 @@ with st.sidebar:
               min_value = 0.0, 
               max_value = 1.0,
               step = 0.05)
-    
+
     num_steps = st.slider('Number of nights: ', 
                     min_value = 10,
                     max_value = 30,
                     step = 1)
-    
+
     pi_0 = np.array([[p],
                      [1-p]])
-    
-    st.latex('T = ' + bmatrix(T))
+
+    st.latex(f'T = {bmatrix(T)}')
     st.latex('\pi (0) = ' + bmatrix(pi_0))
-    
+
     st.latex('\pi(k + 1) = T \pi(k)')
 
 pi_array = pi_0
 pi_idx   = pi_0
 
-for idx in np.arange(0,num_steps):
-    
+for _ in np.arange(0,num_steps):
     pi_idx = T@pi_idx
-    
+
     pi_array = np.column_stack((pi_array, pi_idx))
-    
+
 #%%
 
 fig = px.imshow(pi_array, text_auto=True,

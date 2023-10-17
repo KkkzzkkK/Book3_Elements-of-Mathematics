@@ -17,9 +17,8 @@ def obj_f(x):
     
     x1 = x[0];
     x2 = x[1];
-    
-    obj = -2*x1*np.exp(-x1**2 - x2**2)
-    return obj
+
+    return -2*x1*np.exp(-x1**2 - x2**2)
 
 x0 = [1,1]; # initial guess
 # linear_constraint = LinearConstraint([1,1],[1],[1])
@@ -28,9 +27,8 @@ def nonlinear_c(x):
     
     x1 = x[0];
     x2 = x[1];
-    
-    nlc = np.abs(x1) + np.abs(x2+1) - 1
-    return nlc
+
+    return np.abs(x1) + np.abs(x2+1) - 1
 
 nlc = NonlinearConstraint(nonlinear_c, -np.inf, 0)
 

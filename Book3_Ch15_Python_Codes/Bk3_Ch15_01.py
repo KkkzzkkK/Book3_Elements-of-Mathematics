@@ -28,13 +28,13 @@ plt.close('all')
 
 fig, ax = plt.subplots()
 
-ax.plot(x_array, f_x_array, linewidth = 1.5) 
+ax.plot(x_array, f_x_array, linewidth = 1.5)
 ax.axhline(y = f_x_oo_limit, color = 'r')
 
 ax.grid(linestyle='--', linewidth=0.25, color=[0.5,0.5,0.5])
 ax.set_xlim(x_array.min(),x_array.max())
 plt.xscale("log")
 ax.set_xlabel('$\it{x}$',fontname = 'Times New Roman')
-ax.set_ylabel('$%s$' % latex(f_x), fontname = 'Times New Roman')
+ax.set_ylabel(f'${latex(f_x)}$', fontname = 'Times New Roman')
 
 plt.grid(True, which="both", ls="-")
